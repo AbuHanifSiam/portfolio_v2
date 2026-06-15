@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './Leadership.module.css';
 
 const leadershipRoles = [
@@ -7,8 +8,8 @@ const leadershipRoles = [
     id: 'lead-basis',
     role: 'Former Convener',
     organization: 'BASIS Students Forum (BRACU Chapter)',
-    icon: '⚡',
-    gradient: 'linear-gradient(135deg, #ff5f29 0%, #ff8f6b 100%)',
+    logo: '/images/logo-basis.png',
+    logoClass: 'logoBasis',
     details: [
       'Orchestrated large-scale technology bootcamps, workshops, and career development forums.',
       'Facilitated student engagement with the Bangladesh Association of Software and Information Services (BASIS).',
@@ -19,8 +20,8 @@ const leadershipRoles = [
     id: 'lead-bucc',
     role: 'Former Acting Vice-President',
     organization: 'BRAC University Computer Club (BUCC)',
-    icon: '💻',
-    gradient: 'linear-gradient(135deg, #3389f2 0%, #7b61ff 100%)',
+    logo: '/images/logo-bucc.png',
+    logoClass: 'logoBucc',
     details: [
       'Coordinated daily operations, event roadmaps, and agile planning ceremonies for the largest academic club at BRACU.',
       'Led cross-functional student teams of developers, designers, and communications specialists to ship campus initiatives.',
@@ -52,13 +53,14 @@ export default function Leadership() {
             >
               {/* Card Header area */}
               <div className={styles.cardHeader}>
-                <div
-                  className={styles.iconWrapper}
-                  style={{ background: role.gradient }}
-                >
-                  <span className={styles.icon} aria-hidden="true">
-                    {role.icon}
-                  </span>
+                <div className={`${styles.logoWrapper} ${styles[role.logoClass]}`}>
+                  <Image
+                    src={role.logo}
+                    alt={`${role.organization} Logo`}
+                    width={role.logoClass === 'logoBasis' ? 120 : 56}
+                    height={56}
+                    className={styles.logoImage}
+                  />
                 </div>
                 <div>
                   <span className={styles.roleTitle}>{role.role}</span>

@@ -71,20 +71,36 @@
   margin-bottom: 1.5rem;
 }
 
-.iconWrapper {
-  width: 56px;
+.logoWrapper {
   height: 56px;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
-.icon {
-  font-size: 1.75rem;
-  line-height: 1;
+.logoBasis {
+  width: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 10px;
+}
+
+.logoBucc {
+  width: 56px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px;
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .roleTitle {
@@ -159,14 +175,19 @@
     gap: 1rem;
   }
 
-  .iconWrapper {
-    width: 48px;
+  .logoWrapper {
     height: 48px;
     border-radius: 10px;
   }
 
-  .icon {
-    font-size: 1.5rem;
+  .logoBasis {
+    width: 100px;
+    padding: 4px 8px;
+  }
+
+  .logoBucc {
+    width: 48px;
+    padding: 3px;
   }
 
   .orgName {

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './Education.module.css';
 
 export default function Education() {
@@ -18,7 +19,15 @@ export default function Education() {
         <div className={styles.card} data-animate="fade-up">
           <div className={styles.cardHeader}>
             <div className={styles.mainInfo}>
-              <span className={styles.schoolIcon}>🎓</span>
+              <div className={styles.logoWrapper}>
+                <Image
+                  src="/images/logo-bracu.png"
+                  alt="BRAC University Logo"
+                  width={56}
+                  height={56}
+                  className={styles.logoImage}
+                />
+              </div>
               <div>
                 <h3 className={styles.institution}>BRAC University</h3>
                 <p className={styles.degree}>Bachelor of Science in Computer Science</p>
