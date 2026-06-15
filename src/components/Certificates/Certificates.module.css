@@ -11,9 +11,17 @@
 }
 
 /* ── Header ── */
-.header {
-  text-align: center;
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 3.5rem;
+  gap: 2rem;
+}
+
+.headerText {
+  flex: 1;
+  text-align: left;
 }
 
 .title {
@@ -27,20 +35,56 @@
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
   color: #94949e;
-  margin: 0 auto;
-  text-align: center;
+  margin: 0;
+  text-align: left;
   max-width: 600px;
 }
 
-/* ── Grid ── */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.navArrows {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.navArrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navArrow:hover {
+  background: rgba(51, 137, 242, 0.12);
+  border-color: rgba(51, 137, 242, 0.4);
+  color: #3389f2;
+  transform: scale(1.05);
+}
+
+/* ── Scroll Track ── */
+.scrollTrack {
+  display: flex;
   gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.25rem 2.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.scrollTrack::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* ── Card ── */
 .card {
+  flex: 0 0 350px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
@@ -61,24 +105,40 @@
     0 0 0 1px rgba(51, 137, 242, 0.1);
 }
 
-/* ── Badge Area ── */
+/* ── Badge / Certificate Image Area ── */
 .badgeArea {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 200px;
+  width: 100%;
   position: relative;
+  overflow: hidden;
+  background: #060a13;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.badgeIcon {
-  font-size: 3.5rem;
-  line-height: 1;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-  transition: transform 0.4s ease;
+.badgeGradientOverlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  mix-blend-mode: color;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.card:hover .badgeIcon {
-  transform: scale(1.1) rotate(5deg);
+.card:hover .badgeGradientOverlay {
+  opacity: 0.04;
+}
+
+.certImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .certImage {
+  transform: scale(1.04);
 }
 
 /* ── Card Body ── */
@@ -161,37 +221,36 @@
   transform: translateX(4px);
 }
 
-/* ── Tablet ── */
-@media (max-width: 1023px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ── Mobile ── */
+/* ── Responsive Media Queries ── */
 @media (max-width: 767px) {
   .section {
     padding: 4rem 1rem;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .navArrows {
+    display: none; /* Hide scroll buttons on mobile, swipe is natural */
+  }
+
+  .card {
+    flex: 0 0 290px;
   }
 
   .badgeArea {
-    height: 100px;
+    height: 160px;
   }
 
-  .badgeIcon {
-    font-size: 3rem;
+  .certTitle {
+    font-size: 1.05rem;
   }
 
   .cardBody {
     padding: 1.25rem;
-  }
-
-  .certTitle {
-    font-size: 1.1rem;
   }
 }

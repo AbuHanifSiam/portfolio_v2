@@ -1,5 +1,4 @@
-'use client';
-
+import { useRef } from 'react';
 import styles from './Certificates.module.css';
 
 const certificates = [
@@ -9,7 +8,7 @@ const certificates = [
     issuer: 'Google (via Coursera)',
     date: 'Issued Mar 2026',
     credentialId: 'GG8RLJEGA5JZ',
-    icon: '🏆',
+    image: '/images/cert-google-pm.jpg',
     gradient: 'linear-gradient(135deg, #4285f4 0%, #34a853 100%)',
     url: 'https://coursera.org/verify/professional-cert/GG8RLJEGA5JZ',
   },
@@ -19,7 +18,7 @@ const certificates = [
     issuer: 'Google (via Coursera)',
     date: 'Issued Mar 2026',
     credentialId: 'ES7E6ZK499MD',
-    icon: '🧠',
+    image: '/images/cert-google-ai.jpg',
     gradient: 'linear-gradient(135deg, #fbbc05 0%, #ea4335 100%)',
     url: 'https://coursera.org/verify/professional-cert/ES7E6ZK499MD',
   },
@@ -29,7 +28,7 @@ const certificates = [
     issuer: 'Scrum Alliance',
     date: 'Issued Oct 2024',
     credentialId: 'CSPO-00129582',
-    icon: '🎯',
+    image: '/images/cspo-badge.png',
     gradient: 'linear-gradient(135deg, #ff5f29 0%, #ff8f6b 100%)',
     url: 'https://www.scrumalliance.org/certifications/cspo-certification',
   },
@@ -39,7 +38,7 @@ const certificates = [
     issuer: 'Atlassian (via Coursera)',
     date: 'Issued Apr 2025',
     credentialId: '5TIMHFFNBMEY',
-    icon: '🔷',
+    image: '/images/cert-jira-agile.jpg',
     gradient: 'linear-gradient(135deg, #0052cc 0%, #2684ff 100%)',
     url: 'https://coursera.org/verify/5TIMHFFNBMEY',
   },
@@ -49,7 +48,7 @@ const certificates = [
     issuer: 'Atlassian (via Coursera)',
     date: 'Issued Apr 2025',
     credentialId: 'BRQQ6ODX3WU7',
-    icon: '⚙️',
+    image: '/images/cert-jira-automation.jpg',
     gradient: 'linear-gradient(135deg, #0052cc 0%, #00c9a7 100%)',
     url: 'https://coursera.org/verify/BRQQ6ODX3WU7',
   },
@@ -59,26 +58,85 @@ const certificates = [
     issuer: 'TryHackMe',
     date: 'Issued Mar 2025',
     credentialId: 'THM-2CAB3EXPNA',
-    icon: '🛡️',
+    image: '/images/cert-thm-security.jpg',
     gradient: 'linear-gradient(135deg, #1f2023 0%, #ef4444 100%)',
     url: 'https://tryhackme.com/r/certificate/THM-2CAB3EXPNA',
   },
 ];
 
 export default function Certificates() {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollAmount = clientWidth * 0.75;
+      scrollRef.current.scrollTo({
+        left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <section id="certificates" className={styles.section}>
       <div className={styles.container}>
-        {/* Section Header */}
-        <header className={styles.header} data-animate="fade-up">
-          <h2 className={styles.title}>Professional Credentials</h2>
-          <p className={styles.subtitle}>
-            Certified standards validating project delivery expertise and agile methodologies.
-          </p>
+        {/* Section Header with Navigation Arrows */}
+        <header className={styles.headerRow} data-animate="fade-up">
+          <div className={styles.headerText}>
+            <h2 className={styles.title}>Professional Credentials</h2>
+            <p className={styles.subtitle}>
+              Certified standards validating project delivery expertise and agile methodologies.
+            </p>
+          </div>
+          <div className={styles.navArrows}>
+            <button
+              className={styles.navArrow}
+              onClick={() => scroll('left')}
+              aria-label="Scroll left"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 12H5M5 12L12 19M5 12L12 5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              className={styles.navArrow}
+              onClick={() => scroll('right')}
+              aria-label="Scroll right"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5 12H19M19 12L13 6M19 12L13 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
         </header>
 
-        {/* Certificates Grid */}
-        <div className={styles.grid}>
+        {/* Scrollable Certificates Container */}
+        <div className={styles.scrollTrack} ref={scrollRef}>
           {certificates.map((cert) => (
             <article
               key={cert.id}
@@ -86,21 +144,26 @@ export default function Certificates() {
               className={styles.card}
               data-animate="fade-up"
             >
-              {/* Badge visual */}
-              <div
-                className={styles.badgeArea}
-                style={{ background: cert.gradient }}
-              >
-                <span className={styles.badgeIcon} aria-hidden="true">
-                  {cert.icon}
-                </span>
+              {/* Certificate Image Preview */}
+              <div className={styles.badgeArea}>
+                <div
+                  className={styles.badgeGradientOverlay}
+                  style={{ background: cert.gradient }}
+                />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className={styles.certImage}
+                  loading="lazy"
+                />
               </div>
 
               {/* Certificate Details */}
               <div className={styles.cardBody}>
                 <span className={styles.issuer}>{cert.issuer}</span>
                 <h3 className={styles.certTitle}>{cert.title}</h3>
-                
+
                 <div className={styles.meta}>
                   <span className={styles.date}>{cert.date}</span>
                   {cert.credentialId && (
