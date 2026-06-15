@@ -1,0 +1,188 @@
+/* ── Section ── */
+.section {
+  position: relative;
+  padding: 7rem 1.5rem 5rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Animated gradient background */
+.bgShift {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    #0a0f1c 0%,
+    #1a1040 50%,
+    #0a0f1c 100%
+  );
+  background-size: 100% 200%;
+  animation: gradientShift 8s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Heading ── */
+.heading {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #ffffff;
+  margin: 0 0 1.5rem;
+  line-height: 1.15;
+}
+
+.headingLine {
+  display: block;
+}
+
+/* ── Subtitle ── */
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #94949e;
+  line-height: 1.7;
+  max-width: 550px;
+  margin: 0 auto 2.5rem;
+}
+
+/* ── CTA Buttons ── */
+.ctas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.btnPrimary,
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background: #3389f2;
+  color: #ffffff;
+  border: none;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(51, 137, 242, 0.4);
+}
+
+.btnOutline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btnOutline:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 28px rgba(255, 255, 255, 0.06);
+}
+
+/* ── Social Buttons ── */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94949e;
+  text-decoration: none;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socialBtn:hover {
+  color: #3389f2;
+  border-color: rgba(51, 137, 242, 0.35);
+  box-shadow: 0 0 18px rgba(51, 137, 242, 0.2);
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 1.5rem 1.5rem 2rem;
+  background: #0a0f1c;
+  text-align: center;
+}
+
+.footerLine {
+  max-width: 600px;
+  height: 1px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(51, 137, 242, 0.3),
+    rgba(168, 85, 247, 0.25),
+    transparent
+  );
+}
+
+.footerText {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #94949e;
+  margin: 0;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1199px) {
+  .section {
+    padding: 5rem 1.5rem 4rem;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btnPrimary,
+  .btnOutline {
+    width: 100%;
+    max-width: 280px;
+  }
+}

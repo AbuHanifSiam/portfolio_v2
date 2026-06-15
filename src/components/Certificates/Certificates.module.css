@@ -1,0 +1,197 @@
+/* ── Section ── */
+.section {
+  padding: 6rem 1.5rem;
+  background: #0a0f1c;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #94949e;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Card ── */
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(51, 137, 242, 0.25);
+  box-shadow: 0 12px 32px rgba(51, 137, 242, 0.12),
+    0 0 0 1px rgba(51, 137, 242, 0.1);
+}
+
+/* ── Badge Area ── */
+.badgeArea {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.badgeIcon {
+  font-size: 3.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+  transition: transform 0.4s ease;
+}
+
+.card:hover .badgeIcon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ── Card Body ── */
+.cardBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.issuer {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #3389f2;
+  margin-bottom: 0.5rem;
+}
+
+.certTitle {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 0 0 0.75rem;
+  flex: 1;
+}
+
+/* ── Meta info ── */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.75rem;
+}
+
+.date {
+  font-family: "Inter", sans-serif;
+  font-size: 0.825rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.credential {
+  font-family: "Inter", sans-serif;
+  font-size: 0.78rem;
+  color: #94949e;
+}
+
+/* ── Actions ── */
+.actions {
+  margin-top: auto;
+}
+
+.btnVerify {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.btnVerify:hover {
+  color: #3389f2;
+}
+
+.arrowIcon {
+  transition: transform 0.25s ease;
+}
+
+.btnVerify:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* ── Tablet ── */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .badgeArea {
+    height: 100px;
+  }
+
+  .badgeIcon {
+    font-size: 3rem;
+  }
+
+  .cardBody {
+    padding: 1.25rem;
+  }
+
+  .certTitle {
+    font-size: 1.1rem;
+  }
+}
