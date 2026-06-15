@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
 import About from "@/components/About/About";
 import Journey from "@/components/Journey/Journey";
+import Education from "@/components/Education/Education";
+import Leadership from "@/components/Leadership/Leadership";
 import CaseStudies from "@/components/CaseStudies/CaseStudies";
 import Skills from "@/components/Skills/Skills";
 import Certificates from "@/components/Certificates/Certificates";
@@ -21,6 +23,8 @@ export default function Home() {
         <Hero />
         <About />
         <Journey />
+        <Education />
+        <Leadership />
         <CaseStudies />
         <Skills />
         <Certificates />
