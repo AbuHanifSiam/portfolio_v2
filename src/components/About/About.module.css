@@ -1,0 +1,287 @@
+/* ── Section ── */
+.section {
+  padding: 8rem 1.5rem;
+  background: #0a0f1c;
+  position: relative;
+  overflow: hidden;
+}
+
+.glowBg {
+  position: absolute;
+  top: 30%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 95, 41, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.title {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #ffffff;
+  margin: 0 0 0.75rem;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #94949e;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* ── Layout Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* ── Story Column (Left) ── */
+.story {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.storyTitle {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.75rem;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #94949e;
+  margin: 0;
+}
+
+/* ── Highlight Card (Right) ── */
+.highlightCard {
+  position: relative;
+  background: rgba(255, 95, 41, 0.02);
+  border: 1px solid rgba(255, 95, 41, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.highlightCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 95, 41, 0.25);
+  box-shadow: 0 15px 45px rgba(255, 95, 41, 0.08),
+    0 0 0 1px rgba(255, 95, 41, 0.12);
+}
+
+.glowBorder {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 95, 41, 0.2), transparent, rgba(255, 95, 41, 0.1));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── SVG Badge Styling ── */
+.badgeWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.svgBadge {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 8px 24px rgba(255, 95, 41, 0.15));
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.highlightCard:hover .svgBadge {
+  transform: scale(1.04) rotate(3deg);
+}
+
+/* Pulse Glow Behind Badge */
+.badgePulse {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(255, 95, 41, 0.2);
+  filter: blur(15px);
+  z-index: 1;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(0.9); opacity: 0.5; }
+}
+
+/* Font formatting inside SVG */
+.badgeTextMain {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.badgeTextSub {
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.badgeTextTop {
+  font-family: "Inter", sans-serif;
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ── Badge Meta Details ── */
+.badgeMeta {
+  margin-bottom: 2rem;
+}
+
+.certLabel {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ff5f29;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.certName {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0 0 0.85rem;
+}
+
+.certDesc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #94949e;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Competencies List ── */
+.competencies {
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid rgba(255, 95, 41, 0.1);
+  padding-top: 1.75rem;
+}
+
+.compTitle {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1rem;
+  letter-spacing: 0.5px;
+}
+
+.compList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.compItem {
+  font-family: "Inter", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #94949e;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.compCheck {
+  color: #ff5f29;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .highlightCard {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .section {
+    padding: 5rem 1rem;
+  }
+
+  .highlightCard {
+    padding: 1.75rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .compTitle {
+    font-size: 0.9rem;
+  }
+
+  .compItem {
+    font-size: 0.825rem;
+  }
+}

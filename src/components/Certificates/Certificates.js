@@ -14,6 +14,16 @@ const certificates = [
     url: 'https://www.pmi.org/certifications/project-management-pmp',
   },
   {
+    id: 'cert-cspo',
+    title: 'Certified Scrum Product Owner® (CSPO)',
+    issuer: 'Scrum Alliance',
+    date: 'Issued Oct 2024',
+    credentialId: 'CSPO-00129582',
+    icon: '🎯',
+    gradient: 'linear-gradient(135deg, #ff5f29 0%, #ff8f6b 100%)',
+    url: 'https://www.scrumalliance.org/certifications/cspo-certification',
+  },
+  {
     id: 'cert-csm',
     title: 'Certified ScrumMaster® (CSM)',
     issuer: 'Scrum Alliance',

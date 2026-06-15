@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
+  { label: 'About', href: '#about' },
   { label: 'Journey', href: '#journey' },
   { label: 'Work', href: '#work' },
   { label: 'Skills', href: '#skills' },
