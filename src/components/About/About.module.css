@@ -1,7 +1,7 @@
 /* ── Section ── */
 .section {
   padding: 8rem 1.5rem;
-  background: #0a0f1c;
+  background: transparent;
   position: relative;
   overflow: hidden;
 }

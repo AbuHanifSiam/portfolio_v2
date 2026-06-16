@@ -1,4 +1,5 @@
 import "./globals.css";
+import CursorCanvas from "@/components/CursorCanvas/CursorCanvas";
 
 export const metadata = {
   title: "Md. Abu Hanif Siam | Software Project Manager",
@@ -39,7 +40,10 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <CursorCanvas />
+        {children}
+      </body>
     </html>
   );
 }
