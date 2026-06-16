@@ -1,6 +1,6 @@
 'use client';
 
-import { use } from 'react';
+import { use, useState } from 'react';
 import Link from 'next/link';
 import { projects } from '@/data/projects';
 import styles from './page.module.css';
@@ -8,6 +8,12 @@ import styles from './page.module.css';
 export default function CaseStudyDetail({ params }) {
   const resolvedParams = use(params);
   const project = projects.find((p) => p.id === resolvedParams.id);
+
+  const [activeTab, setActiveTab] = useState(() => {
+    if (project?.websiteImages?.length > 0) return 'website';
+    if (project?.mobileImages?.length > 0) return 'mobile';
+    return 'website';
+  });
 
   if (!project) {
     return (
@@ -81,6 +87,33 @@ export default function CaseStudyDetail({ params }) {
       {/* Main Content Layout */}
       <main className={styles.main}>
         <div className={styles.contentContainer}>
+          {/* Narrative Body (Left side on Desktop, wider ratio) */}
+          <section className={styles.body}>
+            {/* The Challenge */}
+            <article className={styles.sectionCard}>
+              <h2 className={styles.sectionHeading}>
+                <span className={styles.sectionIndex}>01.</span> The Challenge
+              </h2>
+              <p className={styles.sectionText}>{project.challenge}</p>
+            </article>
+
+            {/* The Strategy & Actions */}
+            <article className={styles.sectionCard}>
+              <h2 className={styles.sectionHeading}>
+                <span className={styles.sectionIndex}>02.</span> Project Management Strategy
+              </h2>
+              <p className={styles.sectionText}>{project.strategy}</p>
+            </article>
+
+            {/* The Results */}
+            <article className={styles.sectionCard}>
+              <h2 className={styles.sectionHeading}>
+                <span className={styles.sectionIndex}>03.</span> Business Impact & Results
+              </h2>
+              <p className={styles.sectionText}>{project.results}</p>
+            </article>
+          </section>
+
           {/* Metadata Sidebar (Mobile: bottom/top, Desktop: right side) */}
           <aside className={styles.sidebar}>
             <div className={styles.sidebarCard}>
@@ -119,34 +152,77 @@ export default function CaseStudyDetail({ params }) {
               </div>
             </div>
           </aside>
-
-          {/* Narrative Body (Left side on Desktop) */}
-          <section className={styles.body}>
-            {/* The Challenge */}
-            <article className={styles.sectionCard}>
-              <h2 className={styles.sectionHeading}>
-                <span className={styles.sectionIndex}>01.</span> The Challenge
-              </h2>
-              <p className={styles.sectionText}>{project.challenge}</p>
-            </article>
-
-            {/* The Strategy & Actions */}
-            <article className={styles.sectionCard}>
-              <h2 className={styles.sectionHeading}>
-                <span className={styles.sectionIndex}>02.</span> Project Management Strategy
-              </h2>
-              <p className={styles.sectionText}>{project.strategy}</p>
-            </article>
-
-            {/* The Results */}
-            <article className={styles.sectionCard}>
-              <h2 className={styles.sectionHeading}>
-                <span className={styles.sectionIndex}>03.</span> Business Impact & Results
-              </h2>
-              <p className={styles.sectionText}>{project.results}</p>
-            </article>
-          </section>
         </div>
+
+        {/* Product Showcase (Separate Full-Width Section below content columns) */}
+        {((project.websiteImages && project.websiteImages.length > 0) || 
+          (project.mobileImages && project.mobileImages.length > 0)) && (
+          <section className={styles.showcaseSection}>
+            <div className={styles.showcaseHeader}>
+              <h2 className={styles.showcaseTitle}>
+                <span className={styles.showcaseTitleIndex}>04.</span> Product Showcase
+              </h2>
+              <div className={styles.tabButtons}>
+                {project.websiteImages && project.websiteImages.length > 0 && (
+                  <button
+                    className={activeTab === 'website' ? styles.tabBtnActive : styles.tabBtn}
+                    onClick={() => setActiveTab('website')}
+                  >
+                    Live Website UI
+                  </button>
+                )}
+                {project.mobileImages && project.mobileImages.length > 0 && (
+                  <button
+                    className={activeTab === 'mobile' ? styles.tabBtnActive : styles.tabBtn}
+                    onClick={() => setActiveTab('mobile')}
+                  >
+                    Mobile Application UI
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className={styles.galleryContent}>
+              {activeTab === 'website' && project.websiteImages && (
+                <div className={styles.desktopGrid}>
+                  {project.websiteImages.map((img, idx) => (
+                    <div key={idx} className={styles.desktopMockupCard}>
+                      <div className={styles.browserBar}>
+                        <div className={styles.browserDotRed}></div>
+                        <div className={styles.browserDotYellow}></div>
+                        <div className={styles.browserDotGreen}></div>
+                        <div className={styles.browserAddress}>https://{project.id}.live/page-{idx+1}</div>
+                      </div>
+                      <div className={styles.desktopScreen}>
+                        <img
+                          src={img}
+                          alt={`${project.name} Desktop UI ${idx + 1}`}
+                          className={styles.mockupImage}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === 'mobile' && project.mobileImages && (
+                <div className={styles.mobileGrid}>
+                  {project.mobileImages.map((img, idx) => (
+                    <div key={idx} className={styles.phoneMockupCard}>
+                      <div className={styles.phoneScreen}>
+                        <img
+                          src={img}
+                          alt={`${project.name} Mobile UI ${idx + 1}`}
+                          className={styles.mockupImage}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </section>
+        )}
       </main>
 
       {/* Footer CTA */}

@@ -11,6 +11,17 @@ export const projects = [
     duration: '4 Months (Contract / Rescue)',
     client: 'National Retail Apparel Chain',
     teamSize: '8 Software Engineers, 1 UX Designer, 2 QA Engineers',
+    websiteImages: [
+      '/images/projects/case-ecommerce-desktop-landing.png',
+      '/images/projects/case-ecommerce-desktop-services.png',
+      '/images/projects/case-ecommerce-desktop-haul-details.png',
+      '/images/projects/case-ecommerce-desktop-haul-items.png',
+      '/images/projects/case-ecommerce-desktop-scheduled.png'
+    ],
+    mobileImages: [
+      '/images/projects/case-ecommerce-mobile.png',
+      '/images/projects/case-ecommerce-mobile-2.png'
+    ],
     deliverables: [
       'Prioritized product backlog in Jira',
       'Sprint cadence (planning, daily standups, retrospectives)',
@@ -42,6 +53,14 @@ export const projects = [
     duration: '8 Months (Initiation to Launch)',
     client: 'FinFlow Global Corp',
     teamSize: '12 Cross-functional (6 Frontend, 3 Backend, 2 Devops, 1 QA)',
+    websiteImages: [
+      '/images/projects/case-fintech-desktop.png',
+      '/images/projects/case-fintech-desktop-2.png'
+    ],
+    mobileImages: [
+      '/images/projects/case-fintech-mobile.png',
+      '/images/projects/case-fintech-mobile-2.png'
+    ],
     deliverables: [
       'Real-time WebSockets streaming charts',
       'Multi-currency transactions ledger',
@@ -73,6 +92,14 @@ export const projects = [
     duration: '11 Months',
     client: 'HealthSync Networks LLC',
     teamSize: '10 Professionals (4 Remote Developers, 3 Clinicians, 3 IT Operations)',
+    websiteImages: [
+      '/images/projects/case-healthcare-desktop.png',
+      '/images/projects/case-healthcare-desktop-2.png'
+    ],
+    mobileImages: [
+      '/images/projects/case-healthcare-mobile.png',
+      '/images/projects/case-healthcare-mobile-2.png'
+    ],
     deliverables: [
       'AWS cloud infrastructure architecture diagram',
       'HIPAA Business Associate Agreement (BAA) documentation',
