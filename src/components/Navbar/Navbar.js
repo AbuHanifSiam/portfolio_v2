@@ -6,10 +6,11 @@ import styles from './Navbar.module.css';
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Journey', href: '#journey' },
+  { label: 'Work', href: '#work' },
+  { label: 'Certificates', href: '#certificates' },
+  { label: 'Skills', href: '#skills' },
   { label: 'Education', href: '#education' },
   { label: 'Leadership', href: '#leadership' },
-  { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ];

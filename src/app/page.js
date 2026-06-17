@@ -23,11 +23,11 @@ export default function Home() {
         <Hero />
         <About />
         <Journey />
+        <CaseStudies />
+        <Certificates />
+        <Skills />
         <Education />
         <Leadership />
-        <CaseStudies />
-        <Skills />
-        <Certificates />
         <Testimonials />
         <Contact />
       </main>
