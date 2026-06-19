@@ -31,11 +31,20 @@ export default function CaseStudies() {
               {/* Preview Area */}
               <div
                 className={styles.preview}
-                style={{ background: project.gradient }}
+                style={{ background: '#ffffff' }}
               >
-                <span className={styles.previewIcon} aria-hidden="true">
-                  {project.icon}
-                </span>
+                {project.logo ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={project.logo}
+                    alt={`${project.name} Logo`}
+                    className={styles.previewLogo}
+                  />
+                ) : (
+                  <span className={styles.previewIcon} aria-hidden="true">
+                    {project.icon}
+                  </span>
+                )}
               </div>
 
               {/* Card Body */}

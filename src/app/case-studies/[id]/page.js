@@ -68,7 +68,16 @@ export default function CaseStudyDetail({ params }) {
       <header className={styles.hero} style={{ '--project-gradient': project.gradient }}>
         <div className={styles.heroContainer}>
           <div className={styles.iconWrapper}>
-            <span className={styles.heroIcon}>{project.icon}</span>
+            {project.logo ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={project.logo}
+                alt={`${project.name} Logo`}
+                className={styles.heroLogo}
+              />
+            ) : (
+              <span className={styles.heroIcon}>{project.icon}</span>
+            )}
           </div>
           <h1 className={styles.title}>{project.name}</h1>
           <p className={styles.desc}>{project.description}</p>
@@ -118,7 +127,7 @@ export default function CaseStudyDetail({ params }) {
           <aside className={styles.sidebar}>
             <div className={styles.sidebarCard}>
               <h2 className={styles.sidebarTitle}>Project Overview</h2>
-              
+
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>Role</span>
                 <span className={styles.metaValue}>{project.role}</span>
@@ -155,74 +164,74 @@ export default function CaseStudyDetail({ params }) {
         </div>
 
         {/* Product Showcase (Separate Full-Width Section below content columns) */}
-        {((project.websiteImages && project.websiteImages.length > 0) || 
+        {((project.websiteImages && project.websiteImages.length > 0) ||
           (project.mobileImages && project.mobileImages.length > 0)) && (
-          <section className={styles.showcaseSection}>
-            <div className={styles.showcaseHeader}>
-              <h2 className={styles.showcaseTitle}>
-                <span className={styles.showcaseTitleIndex}>04.</span> Product Showcase
-              </h2>
-              <div className={styles.tabButtons}>
-                {project.websiteImages && project.websiteImages.length > 0 && (
-                  <button
-                    className={activeTab === 'website' ? styles.tabBtnActive : styles.tabBtn}
-                    onClick={() => setActiveTab('website')}
-                  >
-                    Live Website UI
-                  </button>
+            <section className={styles.showcaseSection}>
+              <div className={styles.showcaseHeader}>
+                <h2 className={styles.showcaseTitle}>
+                  <span className={styles.showcaseTitleIndex}>04.</span> Product Showcase
+                </h2>
+                <div className={styles.tabButtons}>
+                  {project.websiteImages && project.websiteImages.length > 0 && (
+                    <button
+                      className={activeTab === 'website' ? styles.tabBtnActive : styles.tabBtn}
+                      onClick={() => setActiveTab('website')}
+                    >
+                      Live Website UI
+                    </button>
+                  )}
+                  {project.mobileImages && project.mobileImages.length > 0 && (
+                    <button
+                      className={activeTab === 'mobile' ? styles.tabBtnActive : styles.tabBtn}
+                      onClick={() => setActiveTab('mobile')}
+                    >
+                      Mobile Application UI
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className={styles.galleryContent}>
+                {activeTab === 'website' && project.websiteImages && (
+                  <div className={styles.desktopGrid}>
+                    {project.websiteImages.map((img, idx) => (
+                      <div key={idx} className={styles.desktopMockupCard}>
+                        <div className={styles.browserBar}>
+                          <div className={styles.browserDotRed}></div>
+                          <div className={styles.browserDotYellow}></div>
+                          <div className={styles.browserDotGreen}></div>
+                          <div className={styles.browserAddress}>https://{project.id}.live/page-{idx + 1}</div>
+                        </div>
+                        <div className={styles.desktopScreen}>
+                          <img
+                            src={img}
+                            alt={`${project.name} Desktop UI ${idx + 1}`}
+                            className={styles.mockupImage}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 )}
-                {project.mobileImages && project.mobileImages.length > 0 && (
-                  <button
-                    className={activeTab === 'mobile' ? styles.tabBtnActive : styles.tabBtn}
-                    onClick={() => setActiveTab('mobile')}
-                  >
-                    Mobile Application UI
-                  </button>
+
+                {activeTab === 'mobile' && project.mobileImages && (
+                  <div className={styles.mobileGrid}>
+                    {project.mobileImages.map((img, idx) => (
+                      <div key={idx} className={styles.phoneMockupCard}>
+                        <div className={styles.phoneScreen}>
+                          <img
+                            src={img}
+                            alt={`${project.name} Mobile UI ${idx + 1}`}
+                            className={styles.mockupImage}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 )}
               </div>
-            </div>
-
-            <div className={styles.galleryContent}>
-              {activeTab === 'website' && project.websiteImages && (
-                <div className={styles.desktopGrid}>
-                  {project.websiteImages.map((img, idx) => (
-                    <div key={idx} className={styles.desktopMockupCard}>
-                      <div className={styles.browserBar}>
-                        <div className={styles.browserDotRed}></div>
-                        <div className={styles.browserDotYellow}></div>
-                        <div className={styles.browserDotGreen}></div>
-                        <div className={styles.browserAddress}>https://{project.id}.live/page-{idx+1}</div>
-                      </div>
-                      <div className={styles.desktopScreen}>
-                        <img
-                          src={img}
-                          alt={`${project.name} Desktop UI ${idx + 1}`}
-                          className={styles.mockupImage}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {activeTab === 'mobile' && project.mobileImages && (
-                <div className={styles.mobileGrid}>
-                  {project.mobileImages.map((img, idx) => (
-                    <div key={idx} className={styles.phoneMockupCard}>
-                      <div className={styles.phoneScreen}>
-                        <img
-                          src={img}
-                          alt={`${project.name} Mobile UI ${idx + 1}`}
-                          className={styles.mockupImage}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          </section>
-        )}
+            </section>
+          )}
       </main>
 
       {/* Footer CTA */}

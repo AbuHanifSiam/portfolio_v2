@@ -13,11 +13,9 @@
 .bgGradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at 50% 10%,
-    #17193b 0%,
-    #0a0f1c 70%
-  );
+  background: radial-gradient(ellipse at 50% 10%,
+      #17193b 0%,
+      #0a0f1c 70%);
   z-index: 0;
   pointer-events: none;
 }
@@ -107,17 +105,24 @@
   width: 72px;
   height: 72px;
   border-radius: 20px;
-  background: var(--project-gradient, #3389f2);
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  box-shadow: 0 10px 25px rgba(51, 137, 242, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .heroIcon {
   font-size: 2.5rem;
   line-height: 1;
+}
+
+.heroLogo {
+  max-width: 65%;
+  max-height: 65%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .title {
@@ -564,9 +569,17 @@
   opacity: 0.85;
 }
 
-.browserDotRed { background: #ff5f56; }
-.browserDotYellow { background: #ffbd2e; }
-.browserDotGreen { background: #27c93f; }
+.browserDotRed {
+  background: #ff5f56;
+}
+
+.browserDotYellow {
+  background: #ffbd2e;
+}
+
+.browserDotGreen {
+  background: #27c93f;
+}
 
 .browserAddress {
   margin: 0 auto;
@@ -685,7 +698,8 @@
 
   .sidebar {
     position: static;
-    order: -1; /* Place overview at the top/side before the reading text on mobile! */
+    order: -1;
+    /* Place overview at the top/side before the reading text on mobile! */
   }
 
   .hero {

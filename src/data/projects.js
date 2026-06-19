@@ -3,6 +3,7 @@ export const projects = [
     id: 'case-ecommerce',
     name: 'EasyGig',
     icon: '🛒',
+    logo: '/images/projects/logo-easygig.png',
     gradient: 'linear-gradient(135deg, #3389f2 0%, #7b61ff 100%)',
     description:
       'Inherited a stalled e-commerce rebuild. Restructured the backlog, introduced sprint ceremonies, and shipped MVP in 90 days.',
@@ -19,13 +20,12 @@ export const projects = [
       '/images/projects/case-ecommerce-desktop-scheduled.png'
     ],
     mobileImages: [
-      '/images/projects/case-ecommerce-mobile.png',
-      '/images/projects/case-ecommerce-mobile-2.png',
+      '/images/projects/case-ecommerce-mobile-overdue-alert.png',
       '/images/projects/case-ecommerce-mobile-active-hauls.png',
       '/images/projects/case-ecommerce-mobile-notifications.png',
       '/images/projects/case-ecommerce-mobile-haul-details.png',
-      '/images/projects/case-ecommerce-mobile-incomplete-hauls.png',
-      '/images/projects/case-ecommerce-mobile-overdue-alert.png'
+      '/images/projects/case-ecommerce-mobile-incomplete-hauls.png'
+
     ],
     deliverables: [
       'Prioritized product backlog in Jira',
@@ -50,6 +50,7 @@ export const projects = [
     id: 'case-fintech',
     name: 'Ops4Team',
     icon: '📊',
+    logo: '/images/projects/logo-ops4.png',
     gradient: 'linear-gradient(135deg, #ff5f29 0%, #ff8f6b 100%)',
     description:
       'Led development of a real-time financial analytics dashboard serving 10K+ daily active users with 99.9% uptime.',
@@ -89,6 +90,7 @@ export const projects = [
     id: 'case-healthcare',
     name: '6sense Website',
     icon: '🏥',
+    logo: '/images/projects/logo-6sense.png',
     gradient: 'linear-gradient(135deg, #00c9a7 0%, #3389f2 100%)',
     description:
       'Managed cloud migration of legacy healthcare system. Zero downtime deployment with full HIPAA compliance maintained.',
