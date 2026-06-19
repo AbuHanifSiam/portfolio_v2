@@ -140,8 +140,8 @@ img {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--card-radius);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   padding: var(--card-padding);
   transition: all var(--transition-smooth);
 }
