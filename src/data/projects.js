@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 'case-ecommerce',
-    name: 'E-Commerce Platform Rescue',
+    name: 'EasyGig',
     icon: '🛒',
     gradient: 'linear-gradient(135deg, #3389f2 0%, #7b61ff 100%)',
     description:
@@ -20,7 +20,12 @@ export const projects = [
     ],
     mobileImages: [
       '/images/projects/case-ecommerce-mobile.png',
-      '/images/projects/case-ecommerce-mobile-2.png'
+      '/images/projects/case-ecommerce-mobile-2.png',
+      '/images/projects/case-ecommerce-mobile-active-hauls.png',
+      '/images/projects/case-ecommerce-mobile-notifications.png',
+      '/images/projects/case-ecommerce-mobile-haul-details.png',
+      '/images/projects/case-ecommerce-mobile-incomplete-hauls.png',
+      '/images/projects/case-ecommerce-mobile-overdue-alert.png'
     ],
     deliverables: [
       'Prioritized product backlog in Jira',
@@ -43,7 +48,7 @@ export const projects = [
   },
   {
     id: 'case-fintech',
-    name: 'FinTech Dashboard',
+    name: 'Ops4Team',
     icon: '📊',
     gradient: 'linear-gradient(135deg, #ff5f29 0%, #ff8f6b 100%)',
     description:
@@ -82,7 +87,7 @@ export const projects = [
   },
   {
     id: 'case-healthcare',
-    name: 'Healthcare SaaS Migration',
+    name: '6sense Website',
     icon: '🏥',
     gradient: 'linear-gradient(135deg, #00c9a7 0%, #3389f2 100%)',
     description:
