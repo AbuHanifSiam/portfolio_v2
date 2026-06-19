@@ -11,9 +11,7 @@ const leadershipRoles = [
     logo: '/images/logo-basis.png',
     logoClass: 'logoBasis',
     details: [
-      'Orchestrated large-scale technology bootcamps, workshops, and career development forums.',
-      'Facilitated student engagement with the Bangladesh Association of Software and Information Services (BASIS).',
-      'Developed early skills in project scoping, stakeholder management, and program organization.'
+      'Spearheaded industry-academia collaboration initiatives, orchestrating large-scale tech seminars and bridging the gap between student innovators and industrial veterans.'
     ]
   },
   {
@@ -23,9 +21,7 @@ const leadershipRoles = [
     logo: '/images/logo-bucc.png',
     logoClass: 'logoBucc',
     details: [
-      'Coordinated daily operations, event roadmaps, and agile planning ceremonies for the largest academic club at BRACU.',
-      'Led cross-functional student teams of developers, designers, and communications specialists to ship campus initiatives.',
-      'Collaborated with university faculty and technology industry partners to bridge academic learning with real industry practices.'
+      "Directed internal operations and member engagement for one of the university's largest technical bodies, managing diverse sub-committees to deliver impactful coding bootcamps."
     ]
   }
 ];

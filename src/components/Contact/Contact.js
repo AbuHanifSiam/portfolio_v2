@@ -25,7 +25,7 @@ export default function Contact() {
           <div className={styles.ctas}>
             <a
               id="cta-email"
-              href="mailto:your@email.com"
+              href="mailto:mdabuhanifsiam@gmail.com"
               className={styles.btnPrimary}
             >
               Get In Touch
@@ -44,7 +44,7 @@ export default function Contact() {
             {/* LinkedIn */}
             <a
               id="social-linkedin"
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/ahsiam11/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialBtn}
@@ -67,7 +67,7 @@ export default function Contact() {
             {/* GitHub */}
             <a
               id="social-github"
-              href="https://github.com"
+              href="https://github.com/AbuHanifSiam"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialBtn}
@@ -90,7 +90,7 @@ export default function Contact() {
             {/* Email */}
             <a
               id="social-email"
-              href="mailto:your@email.com"
+              href="mailto:mdabuhanifsiam@gmail.com"
               className={styles.socialBtn}
               aria-label="Email"
             >
