@@ -5,6 +5,53 @@ import Link from 'next/link';
 import { projects } from '@/data/projects';
 import styles from './page.module.css';
 
+/**
+ * Parses text with **bold** markers into React elements with <strong> tags.
+ * Also trims excessive whitespace from template literal indentation and
+ * splits numbered/bulleted lines into proper list items.
+ */
+function renderFormattedText(text) {
+  if (!text) return null;
+
+  // Clean up excessive whitespace from template literal indentation
+  const cleaned = text.replace(/\n\s{2,}/g, '\n').trim();
+
+  // Split into lines
+  const lines = cleaned.split('\n');
+
+  return lines.map((line, lineIdx) => {
+    const trimmed = line.trim();
+    if (!trimmed) return null;
+
+    // Check if it's a numbered item (1. **Title**: description) or bulleted (- **Title**: description)
+    const isListItem = /^(\d+\.\s|[-•]\s)/.test(trimmed);
+
+    // Parse **bold** markers into <strong> elements
+    const parts = trimmed.split(/(\*\*[^*]+\*\*)/g);
+    const rendered = parts.map((part, partIdx) => {
+      const boldMatch = part.match(/^\*\*(.+)\*\*$/);
+      if (boldMatch) {
+        return <strong key={partIdx}>{boldMatch[1]}</strong>;
+      }
+      return part;
+    });
+
+    if (isListItem) {
+      return (
+        <div key={lineIdx} className={styles.strategyItem}>
+          {rendered}
+        </div>
+      );
+    }
+
+    // Intro line
+    return (
+      <div key={lineIdx} className={styles.strategyIntro}>
+        {rendered}
+      </div>
+    );
+  });
+}
 export default function CaseStudyDetail({ params }) {
   const resolvedParams = use(params);
   const project = projects.find((p) => p.id === resolvedParams.id);
@@ -103,7 +150,7 @@ export default function CaseStudyDetail({ params }) {
               <h2 className={styles.sectionHeading}>
                 <span className={styles.sectionIndex}>01.</span> The Challenge
               </h2>
-              <p className={styles.sectionText}>{project.challenge}</p>
+              <div className={styles.sectionText}>{renderFormattedText(project.challenge)}</div>
             </article>
 
             {/* The Strategy & Actions */}
@@ -111,7 +158,7 @@ export default function CaseStudyDetail({ params }) {
               <h2 className={styles.sectionHeading}>
                 <span className={styles.sectionIndex}>02.</span> Project Management Strategy
               </h2>
-              <p className={styles.sectionText}>{project.strategy}</p>
+              <div className={styles.sectionText}>{renderFormattedText(project.strategy)}</div>
             </article>
 
             {/* The Results */}
@@ -119,7 +166,7 @@ export default function CaseStudyDetail({ params }) {
               <h2 className={styles.sectionHeading}>
                 <span className={styles.sectionIndex}>03.</span> Business Impact & Results
               </h2>
-              <p className={styles.sectionText}>{project.results}</p>
+              <div className={styles.sectionText}>{renderFormattedText(project.results)}</div>
             </article>
           </section>
 

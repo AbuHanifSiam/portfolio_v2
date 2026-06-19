@@ -219,7 +219,41 @@
   color: #b2b2bd;
   line-height: 1.75;
   margin: 0;
-  white-space: pre-wrap;
+}
+
+.sectionText strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.strategyIntro {
+  margin-bottom: 1.25rem;
+  color: #b2b2bd;
+  line-height: 1.75;
+}
+
+.strategyItem {
+  padding: 0.85rem 1rem;
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid #3389f2;
+  border-radius: 0 8px 8px 0;
+  line-height: 1.7;
+  color: #b2b2bd;
+  transition: background 0.2s ease;
+}
+
+.strategyItem:last-child {
+  margin-bottom: 0;
+}
+
+.strategyItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.strategyItem strong {
+  color: #ffffff;
+  font-weight: 600;
 }
 
 /* ===== Sidebar (Right Column) ===== */

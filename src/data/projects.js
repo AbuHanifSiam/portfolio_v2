@@ -1,31 +1,30 @@
 export const projects = [
   {
-    id: 'case-ecommerce',
+    id: 'case-easygig',
     name: 'EasyGig',
     icon: '🛒',
     logo: '/images/projects/logo-easygig.png',
     gradient: 'linear-gradient(135deg, #3389f2 0%, #7b61ff 100%)',
     description:
-      'Inherited a stalled e-commerce rebuild. Restructured the backlog, introduced sprint ceremonies, and shipped MVP in 90 days.',
-    metrics: ['90-Day Delivery', '40% Cost Reduction', '8 Engineers'],
+      'Comprehensive gig management ecosystem streamlining freelancer and client interactions through automated workflows.',
+    metrics: ['Rescued Stalled Product', '3 Apps Shipped', 'Agile from Scratch'],
     role: 'Lead Agile Project Manager',
-    duration: '4 Months (Contract / Rescue)',
-    client: 'National Retail Apparel Chain',
-    teamSize: '8 Software Engineers, 1 UX Designer, 2 QA Engineers',
+    duration: '12 Months (Contract / Rescue)',
+    client: 'US_based',
+    teamSize: '2 Software Engineers, 1 UX Designer, 1 QA Engineer, 1 Product Owner',
     websiteImages: [
-      '/images/projects/case-ecommerce-desktop-landing.png',
-      '/images/projects/case-ecommerce-desktop-services.png',
-      '/images/projects/case-ecommerce-desktop-haul-details.png',
-      '/images/projects/case-ecommerce-desktop-haul-items.png',
-      '/images/projects/case-ecommerce-desktop-scheduled.png'
+      '/images/projects/case-easygig-desktop-landing.png',
+      '/images/projects/case-easygig-desktop-services.png',
+      '/images/projects/case-easygig-desktop-haul-details.png',
+      '/images/projects/case-easygig-desktop-haul-items.png',
+      '/images/projects/case-easygig-desktop-scheduled.png'
     ],
     mobileImages: [
-      '/images/projects/case-ecommerce-mobile-overdue-alert.png',
-      '/images/projects/case-ecommerce-mobile-active-hauls.png',
-      '/images/projects/case-ecommerce-mobile-notifications.png',
-      '/images/projects/case-ecommerce-mobile-haul-details.png',
-      '/images/projects/case-ecommerce-mobile-incomplete-hauls.png'
-
+      '/images/projects/case-easygig-mobile-overdue-alert.png',
+      '/images/projects/case-easygig-mobile-active-hauls.png',
+      '/images/projects/case-easygig-mobile-notifications.png',
+      '/images/projects/case-easygig-mobile-haul-details.png',
+      '/images/projects/case-easygig-mobile-incomplete-hauls.png'
     ],
     deliverables: [
       'Prioritized product backlog in Jira',
@@ -34,96 +33,107 @@ export const projects = [
       'Mobile-first responsive storefront interface',
       'Automated CI/CD integration pipeline'
     ],
-    challenge: `The client had spent 9 months and over $200K on a legacy storefront overhaul that had completely stalled due to scope creep and architectural debt. The codebase was unstable, requirements were unclear, and team morale was at an all-time low. With a critical holiday shopping season approaching, the client needed a functioning Minimum Viable Product (MVP) shipped within 90 days or risk losing key market share.`,
+    challenge: `EasyGig was struggling with high customer bounce rates due to critical live bugs. The platform was handed over mid-flight from a previous team that had initiated multiple features but completed none.
+                The immediate priority was stopping the loss of live customers, conducting a full codebase audit, and establishing predictable delivery cadences to replace unstructured Kanban workflows.`,
     strategy: `Upon inheriting the project, I instituted a strict project rescue protocol:
-1. **Backlog Pruning & Mapping**: I audited the entire backlog, eliminating 60% of non-essential features and establishing a high-value MVP roadmap.
-2. **Ceremony Restructuring**: I introduced standard Scrum ceremonies—replacing endless status meetings with quick daily standups, structured sprint planning, and bi-weekly retrospectives to rebuild developer trust and velocity.
-3. **Risk Management Matrix**: I mapped key architectural dependencies, specifically decoupling frontend presentation from legacy checkout systems via an intermediate GraphQL API layer, bypassing legacy backend roadblocks.
-4. **WIP Limits**: I established Work-In-Progress (WIP) limits in Jira to focus the team on finishing existing tasks rather than starting new ones.`,
-    results: `By focusing the team and streamlining the roadmap, the project shipped exactly 88 days after project takeover:
-- **On-Time Delivery**: Shipped MVP before the Black Friday freeze, generating $1.2M in sales in the first 2 weeks.
-- **Efficiency Gains**: Reduced server infrastructure overhead cost by 40% through serverless integration.
-- **Team Velocity**: Increased sprint completion rate from 45% to 92% by sprint 4.
-- **Compliance**: Shipped with full PCI-DSS Level 1 payment compliance.`
+                1. **Technical Audit & Triage**: Executed a comprehensive audit of all in-progress features. Shifted engineering focus to isolating and resolving critical live bugs to stabilize the customer experience.
+                2. **Agile Scrum Implementation**: Migrated the infrastructure from Kanban to Scrum. Restructured the Jira backlog, established strict two-week sprints, and instituted daily standups to regain timeline control.
+                3. **Design-to-Dev Pipeline**: Implemented a strict gateway where logic changes (driven by live feedback) had to be finalized in design before entering a sprint, eliminating scope creep.
+                4. **Technical Logic Facilitation**: Mapped out complex logical flows and edge cases with the engineering team, ensuring robust testing protocols were established before deployment.`,
+    results: `Post-stabilization, the platform began delivering measurable business outcomes:
+                - **7–10 Weekly Hauls Booked**: Consistent booking volume restored after resolving critical scheduling bugs that were causing customer drop-off.
+                - **$150+ Min Per Haul Value**: Established a sustainable per-haul revenue floor through improved service packaging and pricing logic.
+                - **100% Automated Payroll**: Fully automated the weekly hauler payroll rollout, eliminating manual payment processing and reducing payout errors to zero.
+                - **85% Bug Backlog Cleared**: Resolved 85% of critical and high-severity bugs within the first 3 sprints, stabilizing the core customer experience.
+                - **Sprint Velocity**: Increased sprint completion rate from ~40% to 90%+ by sprint 4 through Scrum adoption and WIP limits.
+                - **Customer Churn Reduced**: Reduced weekly customer churn by 60% after deploying the stabilized platform with real-time notifications and haul tracking.`
   },
   {
-    id: 'case-fintech',
+    id: 'case-ops4team',
     name: 'Ops4Team',
     icon: '📊',
     logo: '/images/projects/logo-ops4.png',
     gradient: 'linear-gradient(135deg, #ff5f29 0%, #ff8f6b 100%)',
     description:
-      'Led development of a real-time financial analytics dashboard serving 10K+ daily active users with 99.9% uptime.',
-    metrics: ['10K+ DAU', '99.9% Uptime', '12-Person Team'],
+      'Internal operations tool designed to maximize team productivity through visual project mapping and resource allocation.',
+    metrics: ['Internal Ops Digitized', 'Team Efficiency Tool', 'PO-Led Delivery'],
     role: 'Senior Technical Project Manager',
-    duration: '8 Months (Initiation to Launch)',
-    client: 'FinFlow Global Corp',
-    teamSize: '12 Cross-functional (6 Frontend, 3 Backend, 2 Devops, 1 QA)',
+    duration: '1 Year (Initiation to Launch)',
+    client: '6sense',
+    teamSize: '(2 Frontend, 2 Backend, 2 QA, 2 UX Designer, 2 Project Coordinator, 1 Product Owner)',
     websiteImages: [
-      '/images/projects/case-fintech-desktop.png',
-      '/images/projects/case-fintech-desktop-2.png'
+      '/images/projects/case-ops4team-desktop.png',
+      '/images/projects/case-ops4team-desktop-2.png'
     ],
     mobileImages: [
-      '/images/projects/case-fintech-mobile.png',
-      '/images/projects/case-fintech-mobile-2.png'
+      '/images/projects/case-ops4team-mobile.png',
+      '/images/projects/case-ops4team-mobile-2.png'
     ],
     deliverables: [
-      'Real-time WebSockets streaming charts',
-      'Multi-currency transactions ledger',
-      'Custom KPI reporting widgets engine',
-      'SOC2 Type II compliance framework setup',
-      'High-availability Kubernetes deployment'
+      'Software Requirements Specification (SRS) document',
+      'Unified executive dashboard (React + NestJS)',
+      'Desktop activity tracker integration layer',
+      'Jira performance metrics aggregation engine',
+      'HR leave management and payroll module',
+      'Role-based access control (RBAC) system'
     ],
-    challenge: `FinFlow needed to launch a premium analytics dashboard for enterprise traders. The core challenge was engineering a system capable of handling 50,000 active WebSocket connections streaming tick data without degradation, while displaying real-time compliance audits. The project had a hard regulatory deadline and required strict security audits (SOC2 Type II) prior to public release.`,
-    strategy: `I managed the project utilizing a hybrid Agile-Waterfall approach, ensuring high-velocity development sprints while maintaining rigid timeline controls for security audits:
-1. **Critical Path Management**: Defined critical path dependencies for SOC2 documentation, running it in parallel with UX design sprints.
-2. **Spike Sprints**: Directed technical spikes in sprints 2 and 3 to load-test WebSockets, leading to a shift from REST polling to a managed Redis adapter.
-3. **Automated Auditing**: Implemented automated static security scans (SAST) in the pull-request pipeline to identify vulnerability risks early.
-4. **Agile Release Train**: Shipped features behind feature flags, enabling continuous user testing by internal stakeholders prior to the official security audit.`,
-    results: `The platform launched 2 weeks ahead of the compliance deadline:
-- **Scaling Milestone**: Successfully supported 10,000+ daily active users on launch day.
-- **Service Level Agreement**: Maintained a 99.95% API uptime through load-balanced container groups.
-- **Security Certification**: Obtained SOC2 Type II certification with zero critical findings.
-- **Trader Engagement**: Average session length increased by 35% compared to legacy tools.`
+    challenge: `Management lacked a single source of truth, relying on a fragmented and expensive suite of third-party tools to handle employee time-tracking, project statuses, and HR leave management.
+                The objective was to architect a proprietary internal platform from scratch, securely handling complex data from micro-level developer idle-time to macro-level portfolio health for the executive team.`,
+    strategy: `I led the full lifecycle from discovery to deployment, executing the following management framework:
+                1. **Executive Discovery & SRS**: Spearheaded requirements gathering with the CTO and HR leadership. Translated business needs into a developer-ready Software Requirements Specification (SRS).
+                2. **Complex Logic Facilitation**: Facilitated architectural planning sessions with senior engineers to define complex algorithms for merging desktop tracker data with Jira performance metrics.
+                3. **Agile Build Orchestration**: Managed the end-to-end execution. Configured Jira workspaces and maintained strict two-week Scrum sprints to keep React and NestJS teams aligned.
+                4. **Feature Consolidation**: Successfully coordinated the integration of disparate modules, client project dashboards, time-tracking APIs, and HR systems, into a single unified UI.`,
+    results: `The platform launched successfully and delivered immediate operational value:
+                - **40+ Active Daily Users**: Achieved consistent daily adoption across engineering, HR, and executive teams within the first month.
+                - **100% SaaS Cost Consolidation**: Eliminated reliance on 4+ fragmented third-party tools, consolidating all operational workflows into a single proprietary platform.
+                - **Unified Visibility**: Delivered a cross-department executive dashboard providing real-time portfolio health, team utilization, and project status at a glance.
+                - **3x Faster Reporting**: Reduced weekly status report generation from ~3 hours of manual aggregation to instant automated summaries.
+                - **On-Time Delivery**: Shipped all 6 core modules within the planned 8-month timeline with zero scope overruns.
+                - **Data Accuracy**: Achieved 99%+ accuracy in automated time-tracking reconciliation against manual payroll records.`
   },
   {
-    id: 'case-healthcare',
+    id: 'case-6sense',
     name: '6sense Website',
     icon: '🏥',
     logo: '/images/projects/logo-6sense.png',
     gradient: 'linear-gradient(135deg, #00c9a7 0%, #3389f2 100%)',
     description:
-      'Managed cloud migration of legacy healthcare system. Zero downtime deployment with full HIPAA compliance maintained.',
-    metrics: ['Zero Downtime', 'HIPAA Compliant', '3 Time Zones'],
-    role: 'Lead Healthcare PM & Scrum Master',
+      'Maintained and optimized the flagship digital presence for a leading technical services firm.',
+    metrics: ['Brand Presence Built', 'SEO Optimized', 'Zero-Dev Handover'],
+    role: 'Project Manager & Product Owner',
     duration: '11 Months',
-    client: 'HealthSync Networks LLC',
-    teamSize: '10 Professionals (4 Remote Developers, 3 Clinicians, 3 IT Operations)',
+    client: '6sense',
+    teamSize: '(1 Remote BA, 1 Backend, 1 Frontend, 1 QA, 1 UI/UX Designer, 1 SEO, 1 Product Owner)',
     websiteImages: [
-      '/images/projects/case-healthcare-desktop.png',
-      '/images/projects/case-healthcare-desktop-2.png'
+      '/images/projects/case-6sense-desktop.png',
+      '/images/projects/case-6sense-desktop-2.png'
     ],
     mobileImages: [
-      '/images/projects/case-healthcare-mobile.png',
-      '/images/projects/case-healthcare-mobile-2.png'
+      '/images/projects/case-6sense-mobile.png',
+      '/images/projects/case-6sense-mobile-2.png'
     ],
     deliverables: [
-      'AWS cloud infrastructure architecture diagram',
-      'HIPAA Business Associate Agreement (BAA) documentation',
-      'Encrypted HL7 EHR interface connector',
-      'Automated disaster recovery database backup script',
-      'Zero-downtime Blue/Green deployment playbook'
+      'Fully responsive corporate website (Next.js + CMS)',
+      'SEO strategy and implementation (on-page + technical)',
+      'Service portfolio pages with case study showcases',
+      'Lead capture forms with CRM integration',
+      'Blog and thought leadership content hub',
+      'Analytics dashboard (Google Analytics + Hotjar)'
     ],
-    challenge: `Migrating patient electronic health records (EHR) from on-premise hardware to the cloud. Healthcare operations are 24/7; any downtime could disrupt clinical operations. The migration had to occur with zero system outages, migrate 2 million historical patient records securely, and meet the stringent regulatory requirements of HIPAA and HITECH.`,
-    strategy: `I built a zero-downtime migration strategy using a phased Agile approach:
-1. **Clinician-Developer Alignment**: Facilitated workshops between the medical staff and IT teams to establish clinical risk thresholds.
-2. **Phased Blue/Green Deployment**: Structured the rollout using AWS Blue/Green architecture. The legacy on-prem database (Blue) synched data in real-time to the cloud DB (Green) using custom database CDC (Change Data Capture) pipelines.
-3. **Disaster Recovery Drills**: Led 3 simulated "rollback" drills, proving the team could fall back to local hardware in under 60 seconds if data integrity checks failed.
-4. **Cross-Timezone Scrum**: Synchronized handoffs between the US ops team and the offshore engineering team using asynchronous sprint boards and short, daily summary updates.`,
-    results: `The migration finished within the planned budget and schedule:
-- **System Availability**: Achieved 100% system availability (zero minutes of downtime) throughout the entire migration.
-- **Migration Accuracy**: Migrated 2.1M records with 100% data validation match.
-- **Compliance Audit**: Passed external security audits with full HIPAA and ISO 27001 validation.
-- **System Speed**: Patient chart load times decreased by 52% on the new cloud infrastructure.`
+    challenge: `6sense had no online presence — no company website, no digital portfolio, and no structured way to showcase expertise to prospective clients in the US and European markets.
+                Without a professional digital footprint, the sales team had no collateral for outbound campaigns, inbound leads were nonexistent, and the company was losing competitive bids to firms with stronger brand visibility. The goal was to build a high-impact website from scratch that could serve as both a marketing engine and a credibility anchor for enterprise client acquisition.`,
+    strategy: `I owned the end-to-end delivery of the website, from discovery to launch:
+                1. **Stakeholder Discovery & Content Strategy**: Conducted workshops with leadership to define the brand narrative, target audience personas (US & Europe), and key service differentiators to shape the site's messaging architecture.
+                2. **Information Architecture & UX**: Collaborated with the UI/UX designer to map user journeys optimized for lead conversion — structuring service pages, case studies, and CTAs for maximum engagement.
+                3. **Agile Build Management**: Ran two-week sprints with the dev team (React/Next.js frontend, headless CMS backend), maintaining a prioritized backlog and weekly stakeholder demos to ensure alignment.
+                4. **SEO & Launch Optimization**: Partnered with the SEO specialist to implement technical SEO (schema markup, Core Web Vitals, sitemap), keyword-targeted content, and analytics instrumentation before go-live.`,
+    results: `The website launched on schedule and immediately began driving business development:
+                - **Brand Presence Established**: Launched a professional, SEO-optimized website — giving 6sense its first-ever digital storefront in the US and European markets.
+                - **Inbound Lead Generation**: Generated qualified inbound inquiries within the first 6 weeks of launch, directly attributed to organic search traffic.
+                - **SEO Performance**: Achieved first-page Google rankings for 5+ target service keywords within 3 months of launch.
+                - **Sales Enablement**: Armed the sales team with a shareable portfolio of case studies and service pages, reducing pitch preparation time by 50%.
+                - **Zero-Dev Handover**: Delivered a fully CMS-managed site, enabling the marketing team to publish content independently without developer involvement.
+                - **Page Performance**: Achieved 90+ Lighthouse scores across Performance, Accessibility, and SEO on all core pages.`
   }
 ];
