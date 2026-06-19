@@ -4,34 +4,24 @@ import styles from './Journey.module.css';
 
 const milestones = [
   {
-    year: '2020',
-    title: 'The Beginning',
-    description:
-      'Started my career in tech, diving deep into software development lifecycle and discovering my passion for organizing chaos.',
+    year: '2025-Present',
+    title: 'Associate Project Coordinator',
+    bullets: [
+      'Supported application roadmap execution by preparing PRDs, user stories, and change requests',
+      'Coordinated with engineering, design, and QA teams using Jira & ClickUp to maintain timely delivery of releases',
+      'Tracked sprint progress, risk flags, and dependency issues to support service governance',
+      'Assisted in QA validation, test case design, and release readiness checks',
+    ],
   },
   {
-    year: '2021',
-    title: 'First Leadership Role',
-    description:
-      'Stepped into Scrum Master responsibilities. Learned that the best code ships when teams are heard, not just managed.',
-  },
-  {
-    year: '2022',
-    title: 'Cross-Functional Command',
-    description:
-      'Led a 12-person cross-functional team across 3 time zones. Delivered a $500K platform migration 2 weeks ahead of schedule.',
-  },
-  {
-    year: '2023',
-    title: 'The Rescue Mission',
-    description:
-      'Took over a stalled enterprise project bleeding $50K/month. Restructured the roadmap, re-engaged stakeholders, and shipped in 90 days.',
-  },
-  {
-    year: '2024-Present',
-    title: 'Scaling Impact',
-    description:
-      'Managing multiple product lines simultaneously. Building PM practices and mentoring junior project managers.',
+    year: '2024-2025',
+    title: 'Teacher Assistant',
+    bullets: [
+      'Checked lab files, assignments, and student project submissions',
+      'Conducted regular consultation sessions to address student queries and clarify topics',
+      'Prepared quiz/exam questions and graded answer scripts',
+      'Helped students understand complex academic topics and course concepts',
+    ],
   },
 ];
 
@@ -56,9 +46,8 @@ export default function Journey() {
           {milestones.map((milestone, index) => (
             <article
               key={milestone.year}
-              className={`${styles.timelineItem} ${
-                index % 2 === 0 ? styles.left : styles.right
-              }`}
+              className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right
+                }`}
               data-animate="timeline-item"
             >
               {/* Glowing Node */}
@@ -71,7 +60,16 @@ export default function Journey() {
               <div className={styles.card}>
                 <span className={styles.yearBadge}>{milestone.year}</span>
                 <h3 className={styles.cardTitle}>{milestone.title}</h3>
-                <p className={styles.cardDesc}>{milestone.description}</p>
+                {milestone.description && (
+                  <p className={styles.cardDesc}>{milestone.description}</p>
+                )}
+                {milestone.bullets && (
+                  <ul className={styles.bulletList}>
+                    {milestone.bullets.map((bullet, idx) => (
+                      <li key={idx}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </article>
           ))}

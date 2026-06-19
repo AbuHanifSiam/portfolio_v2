@@ -29,12 +29,12 @@ export default function About() {
         <div className={styles.grid}>
           {/* Narrative Story (Left Column) */}
           <div className={styles.story} data-animate="fade-up">
-            <h3 className={styles.storyTitle}>My Philosophy</h3>
+            <h3 className={styles.storyTitle}>I&apos;m Md. Abu Hanif Siam</h3>
             <p className={styles.paragraph}>
-              As a technical project manager and product delivery leader, I believe that building great software requires more than just managing timelines—it demands deep alignment, empathy, and absolute clarity. I specialize in stepping into complex, high-stakes environments, dissecting chaotic backlogs, and structuring processes that empower teams to ship features that users love.
+              As a project manager and product delivery leader, I believe that building great software requires more than just managing timelines—it demands deep alignment, empathy, and absolute clarity. I specialize in stepping into complex, high-stakes environments, dissecting chaotic backlogs, and structuring processes that empower teams to ship features that users love.
             </p>
             <p className={styles.paragraph}>
-              With a background spanning both hands-on development workflows and product management frameworks, I serve as a translator. I help developers understand the "why" behind the business requirements, and help stakeholders appreciate the technical engineering paths necessary to build scalable, long-term platforms.
+              With a background spanning both hands-on development workflows and product management frameworks, I serve as a translator. I help developers understand the &quot;why&quot; behind the business requirements, and help stakeholders appreciate the technical engineering paths necessary to build scalable, long-term platforms.
             </p>
             <p className={styles.paragraph}>
               My methodologies are heavily rooted in Scrum and Agile principles. Whether resolving team bottlenecks, setting WIP limits, or mapping out critical paths, I focus on maximizing flow and cutting out process waste.

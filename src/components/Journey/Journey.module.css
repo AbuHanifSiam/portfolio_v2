@@ -170,6 +170,58 @@
   line-height: 1.65;
 }
 
+/* ─── Bullet List ─── */
+.bulletList {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  color: #94949e;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bulletList li {
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Default / Right card: bullets on the left, text left-aligned */
+.right .bulletList li {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.right .bulletList li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #3389f2;
+}
+
+/* Left card (desktop): bullets on the right, text right-aligned */
+.left .bulletList li {
+  padding-right: 20px;
+  text-align: right;
+}
+
+.left .bulletList li::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #3389f2;
+}
+
 /* ─── Tablet (768px – 1199px) ─── */
 @media (max-width: 1199px) {
   .section {
@@ -253,6 +305,36 @@
   }
 
   .cardDesc {
+    font-size: 0.875rem;
+  }
+
+  /* Reset left card bullet list styling on mobile to align left */
+  .left .bulletList li {
+    padding-left: 20px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .left .bulletList li::after {
+    display: none;
+  }
+
+  .left .bulletList li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #3389f2;
+  }
+
+  .right .bulletList li::before {
+    top: 8px;
+  }
+
+  .bulletList {
     font-size: 0.875rem;
   }
 }
