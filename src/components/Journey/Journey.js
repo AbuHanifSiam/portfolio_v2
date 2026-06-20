@@ -6,6 +6,7 @@ const milestones = [
   {
     year: '2025-Present',
     title: 'Associate Project Coordinator',
+    company: '6sense HQ',
     bullets: [
       'Supported application roadmap execution by preparing PRDs, user stories, and change requests',
       'Coordinated with engineering, design, and QA teams using Jira & ClickUp to maintain timely delivery of releases',
@@ -16,6 +17,7 @@ const milestones = [
   {
     year: '2024-2025',
     title: 'Teacher Assistant',
+    company: 'BRAC University',
     bullets: [
       'Checked lab files, assignments, and student project submissions',
       'Conducted regular consultation sessions to address student queries and clarify topics',
@@ -60,6 +62,9 @@ export default function Journey() {
               <div className={styles.card}>
                 <span className={styles.yearBadge}>{milestone.year}</span>
                 <h3 className={styles.cardTitle}>{milestone.title}</h3>
+                {milestone.company && (
+                  <div className={styles.cardCompany}>{milestone.company}</div>
+                )}
                 {milestone.description && (
                   <p className={styles.cardDesc}>{milestone.description}</p>
                 )}

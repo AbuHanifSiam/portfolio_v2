@@ -162,6 +162,15 @@
   line-height: 1.3;
 }
 
+.cardCompany {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent-blue-light, #5aa3ff);
+  margin: -6px 0 16px;
+  line-height: 1.4;
+}
+
 .cardDesc {
   font-family: 'Inter', sans-serif;
   font-size: 0.9375rem;
@@ -302,6 +311,11 @@
 
   .cardTitle {
     font-size: 1.125rem;
+  }
+
+  .cardCompany {
+    font-size: 0.875rem;
+    margin: -6px 0 12px;
   }
 
   .cardDesc {

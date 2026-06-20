@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import styles from './Skills.module.css';
 
 const largeCards = [
@@ -25,19 +26,14 @@ const mediumCard = {
 };
 
 const tools = [
-  { id: 'tool-jira', icon: '🔷', name: 'Jira' },
-  { id: 'tool-confluence', icon: '📘', name: 'Confluence' },
-  { id: 'tool-github', icon: '🐙', name: 'GitHub' },
+  { id: 'tool-jira', icon: '/images/jira-logo.png', isImage: true, name: 'Jira' },
+  { id: 'tool-confluence', icon: '/images/confluence-logo.png', isImage: true, name: 'Confluence' },
+  { id: 'tool-github', icon: '/images/github-logo.svg', isImage: true, name: 'GitHub' },
   { id: 'tool-slack', icon: '💬', name: 'Slack' },
-  { id: 'tool-figma', icon: '🎨', name: 'Figma' },
-  { id: 'tool-notion', icon: '📓', name: 'Notion' },
+  { id: 'tool-figma', icon: '/images/figma-logo.png', isImage: true, name: 'Figma' },
+  { id: 'tool-trello', icon: '/images/trello-logo.png', isImage: true, name: 'Trello' },
 ];
 
-const progressBars = [
-  { id: 'progress-risk', label: 'Risk Management', value: 95 },
-  { id: 'progress-budget', label: 'Budget Control', value: 92 },
-  { id: 'progress-leadership', label: 'Team Leadership', value: 98 },
-];
 
 export default function Skills() {
   return (
@@ -86,35 +82,24 @@ export default function Skills() {
               className={`${styles.card} ${styles.cardSmall}`}
               data-animate="fade-up"
             >
-              <span className={styles.toolIcon}>{tool.icon}</span>
+              <span className={styles.toolIcon}>
+                {tool.isImage ? (
+                  <Image
+                    src={tool.icon}
+                    alt={`${tool.name} Logo`}
+                    width={40}
+                    height={40}
+                    className={styles.toolIconImage}
+                  />
+                ) : (
+                  tool.icon
+                )}
+              </span>
               <span className={styles.toolName}>{tool.name}</span>
             </article>
           ))}
         </div>
 
-        {/* Progress Bars */}
-        <div className={styles.progressSection} data-animate="fade-up">
-          {progressBars.map((bar) => (
-            <div key={bar.id} id={bar.id} className={styles.progressItem}>
-              <div className={styles.progressHeader}>
-                <span className={styles.progressLabel}>{bar.label}</span>
-                <span className={styles.progressValue}>{bar.value}%</span>
-              </div>
-              <div className={styles.progressTrack}>
-                <div
-                  className={styles.progressFill}
-                  data-animate="progress"
-                  style={{ '--progress': `${bar.value}%` }}
-                  role="progressbar"
-                  aria-valuenow={bar.value}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                  aria-label={`${bar.label}: ${bar.value}%`}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
