@@ -1,5 +1,6 @@
 import "./globals.css";
 import CursorCanvas from "@/components/CursorCanvas/CursorCanvas";
+import ChatHead from "@/components/ChatHead/ChatHead";
 
 export const metadata = {
   title: "Md. Abu Hanif Siam | Software Project Manager",
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
       <body>
         <CursorCanvas />
         {children}
+        <ChatHead />
       </body>
     </html>
   );

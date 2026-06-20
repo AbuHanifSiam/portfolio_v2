@@ -32,7 +32,8 @@ export default function Contact() {
             </a>
             <a
               id="cta-resume"
-              href="#"
+              href="/Md.AbuHanifSiam_CV.pdf"
+              download="Md.AbuHanifSiam_CV.pdf"
               className={styles.btnOutline}
             >
               Download Resume
