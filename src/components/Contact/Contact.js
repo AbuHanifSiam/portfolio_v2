@@ -25,7 +25,9 @@ export default function Contact() {
           <div className={styles.ctas}>
             <a
               id="cta-email"
-              href="mailto:mdabuhanifsiam@gmail.com"
+              href="https://calendly.com/mdabuhanifsiam/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.btnPrimary}
             >
               Get In Touch
