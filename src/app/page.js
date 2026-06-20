@@ -11,6 +11,7 @@ import CaseStudies from "@/components/CaseStudies/CaseStudies";
 import Skills from "@/components/Skills/Skills";
 import Certificates from "@/components/Certificates/Certificates";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import SpecializedSolutions from "@/components/SpecializedSolutions/SpecializedSolutions";
 import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
         <Education />
         <Leadership />
         <Testimonials />
+        <SpecializedSolutions />
         <Contact />
       </main>
     </>
