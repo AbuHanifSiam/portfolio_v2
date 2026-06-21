@@ -62,13 +62,13 @@ export const projects = [
     client: '6sense',
     teamSize: '(2 Frontend, 2 Backend, 2 QA, 2 UX Designer, 2 Project Coordinator, 1 Product Owner)',
     websiteImages: [
-      '/images/projects/case-ops4team-desktop.png',
-      '/images/projects/case-ops4team-desktop-2.png'
+      '/images/projects/case-ops4team-desktop-1.png',
+      '/images/projects/case-ops4team-desktop-2.png',
+      '/images/projects/case-ops4team-desktop-3.png',
+      '/images/projects/case-ops4team-desktop-4.png',
+      '/images/projects/case-ops4team-desktop-5.png'
     ],
-    mobileImages: [
-      '/images/projects/case-ops4team-mobile.png',
-      '/images/projects/case-ops4team-mobile-2.png'
-    ],
+    mobileImages: [],
     deliverables: [
       'Software Requirements Specification (SRS) document',
       'Unified executive dashboard (React + NestJS)',
@@ -106,13 +106,12 @@ export const projects = [
     client: '6sense',
     teamSize: '(1 Remote BA, 1 Backend, 1 Frontend, 1 QA, 1 UI/UX Designer, 1 SEO, 1 Product Owner)',
     websiteImages: [
-      '/images/projects/case-6sense-desktop.png',
-      '/images/projects/case-6sense-desktop-2.png'
+      '/images/projects/case-6sense-desktop-hero.png',
+      '/images/projects/case-6sense-desktop-menu.png',
+      '/images/projects/case-6sense-desktop-blog.png',
+      '/images/projects/case-6sense-desktop-contact.png'
     ],
-    mobileImages: [
-      '/images/projects/case-6sense-mobile.png',
-      '/images/projects/case-6sense-mobile-2.png'
-    ],
+    mobileImages: [],
     deliverables: [
       'Fully responsive corporate website (Next.js + CMS)',
       'SEO strategy and implementation (on-page + technical)',

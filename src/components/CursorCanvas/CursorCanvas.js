@@ -66,6 +66,7 @@ export default function CursorCanvas() {
   const mouseRef = useRef({ x: -9999, y: -9999, active: false });
   const rafRef = useRef(null);
   const timeRef = useRef(0);
+  const animateRef = useRef(null);
 
   // ── Initialise Nodes ──
   const initNodes = useCallback((w, h) => {
@@ -228,11 +229,11 @@ export default function CursorCanvas() {
       ctx.fill();
     }
 
-    rafRef.current = requestAnimationFrame(animate);
+    rafRef.current = requestAnimationFrame(animateRef.current);
   }, []);
-
   // ── Setup / Teardown ──
   useEffect(() => {
+    animateRef.current = animate;
     const canvas = canvasRef.current;
     if (!canvas) return;
 

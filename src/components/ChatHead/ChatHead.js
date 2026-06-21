@@ -51,7 +51,7 @@ export default function ChatHead() {
             />
           </svg>
         </div>
-        <span className={styles.tooltip}>Let's Meet</span>
+        <span className={styles.tooltip}>Let&apos;s Meet</span>
       </button>
 
       {/* Expanded Scheduling Card */}
@@ -74,7 +74,7 @@ export default function ChatHead() {
               <span className={styles.statusDot} />
             </div>
             <div className={styles.titleWrapper}>
-              <span className={styles.title}>Let's Meet</span>
+              <span className={styles.title}>Let&apos;s Meet</span>
             </div>
           </div>
 
