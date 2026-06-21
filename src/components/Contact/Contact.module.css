@@ -186,3 +186,125 @@
     max-width: 280px;
   }
 }
+
+/* ── Email Popover ── */
+.emailContainer {
+  position: relative;
+}
+
+.socialActive {
+  color: #3389f2 !important;
+  border-color: rgba(51, 137, 242, 0.35) !important;
+  box-shadow: 0 0 18px rgba(51, 137, 242, 0.2) !important;
+  background: rgba(51, 137, 242, 0.05) !important;
+}
+
+.popover {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  background: rgba(13, 17, 30, 0.95);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0.35rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.02);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: popoverFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Arrow pointing down */
+.popover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(13, 17, 30, 0.95) transparent transparent transparent;
+}
+
+@keyframes popoverFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(6px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+.emailCopyBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emailCopyBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.emailCopyBtn:active {
+  transform: scale(0.98);
+}
+
+.emailText {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.copyIconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #94949e;
+  transition: color 0.2s ease;
+}
+
+.emailCopyBtn:hover .copyIconWrapper {
+  color: #ffffff;
+}
+
+.copiedText {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #4ade80;
+  font-weight: 600;
+  animation: fadeInText 0.15s ease-out;
+}
+
+.successIcon {
+  color: #4ade80;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

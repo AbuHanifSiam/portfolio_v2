@@ -1,8 +1,43 @@
 'use client';
 
+import { useState, useRef, useEffect } from 'react';
 import styles from './Contact.module.css';
 
 export default function Contact() {
+  const [showPopover, setShowPopover] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const popoverRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        popoverRef.current &&
+        !popoverRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
+        setShowPopover(false);
+      }
+    }
+    if (showPopover) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showPopover]);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText('mdabuhanifsiam@gmail.com');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
+
   return (
     <>
       <section id="contact" className={styles.section}>
@@ -90,37 +125,89 @@ export default function Contact() {
               </svg>
             </a>
 
-            {/* Email */}
-            <a
-              id="social-email"
-              href="mailto:mdabuhanifsiam@gmail.com"
-              className={styles.socialBtn}
-              aria-label="Email"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            {/* Email Container */}
+            <div className={styles.emailContainer}>
+              <button
+                id="social-email"
+                ref={buttonRef}
+                type="button"
+                className={`${styles.socialBtn} ${showPopover ? styles.socialActive : ''}`}
+                onClick={() => setShowPopover(!showPopover)}
+                aria-label="Email"
               >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
                   fill="none"
-                />
-                <path
-                  d="M22 6l-10 7L2 6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    fill="none"
+                  />
+                  <path
+                    d="M22 6l-10 7L2 6"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+
+              {showPopover && (
+                <div className={styles.popover} ref={popoverRef}>
+                  <button
+                    className={styles.emailCopyBtn}
+                    onClick={handleCopy}
+                    aria-label="Copy email address"
+                    title="Copy email address"
+                  >
+                    <span className={styles.emailText}>mdabuhanifsiam@gmail.com</span>
+                    <span className={styles.copyIconWrapper}>
+                      {copied ? (
+                        <>
+                          <span className={styles.copiedText}>Copied!</span>
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className={styles.successIcon}
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </>
+                      ) : (
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={styles.copyIcon}
+                        >
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                        </svg>
+                      )}
+                    </span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -129,7 +216,7 @@ export default function Contact() {
       <footer className={styles.footer}>
         <div className={styles.footerLine} aria-hidden="true" />
         <p className={styles.footerText}>
-          © 2024 Md. Abu Hanif Siam. Crafted with passion.
+          © 2026 Md. Abu Hanif Siam. Crafted with passion.
         </p>
       </footer>
     </>

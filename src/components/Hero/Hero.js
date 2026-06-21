@@ -72,12 +72,16 @@ export default function Hero() {
             </a>
             <a
               id="cta-contact"
-              href="https://calendly.com/mdabuhanifsiam/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className={styles.ctaOutline}
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .querySelector('#contact')
+                  ?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
-              Get In Touch
+              Let&apos;s Connect
             </a>
           </div>
         </div>
