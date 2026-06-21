@@ -22,7 +22,7 @@ const solutions = [
       'Ceremony Templates'
     ],
     buttonText: 'Request Setup',
-    buttonLink: '#'
+    buttonLink: 'https://calendly.com/mdabuhanifsiam/30min'
   },
   {
     id: 'solution-discovery',
@@ -44,7 +44,7 @@ const solutions = [
       'Architecture Flowcharts'
     ],
     buttonText: 'Start Discovery',
-    buttonLink: '#'
+    buttonLink: 'https://calendly.com/mdabuhanifsiam/30min'
   },
   {
     id: 'solution-rescue',
@@ -63,7 +63,7 @@ const solutions = [
       'Recovery Sprint Roadmap'
     ],
     buttonText: 'Audit My Project',
-    buttonLink: '#'
+    buttonLink: '#work'
   }
 ];
 
@@ -103,7 +103,20 @@ export default function SpecializedSolutions() {
                 ))}
               </ul>
 
-              <a href={solution.buttonLink} className={styles.ctaButton}>
+              <a
+                href={solution.buttonLink}
+                className={styles.ctaButton}
+                target={solution.buttonLink.startsWith('#') ? undefined : "_blank"}
+                rel={solution.buttonLink.startsWith('#') ? undefined : "noopener noreferrer"}
+                onClick={(e) => {
+                  if (solution.buttonLink.startsWith('#')) {
+                    e.preventDefault();
+                    document
+                      .querySelector(solution.buttonLink)
+                      ?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 <span>{solution.buttonText}</span>
                 <span className={styles.arrow}>→</span>
               </a>
