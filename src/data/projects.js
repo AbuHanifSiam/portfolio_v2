@@ -8,10 +8,10 @@ export const projects = [
     description:
       'Comprehensive gig management ecosystem streamlining freelancer and client interactions through automated workflows.',
     metrics: ['Rescued Stalled Product', '3 Apps Shipped', 'Agile from Scratch'],
-    role: 'Lead Agile Project Manager',
+    role: 'Project Manager',
     duration: '12 Months (Contract / Rescue)',
     client: 'US_based',
-    teamSize: '2 Software Engineers, 1 UX Designer, 1 QA Engineer, 1 Product Owner',
+    teamSize: '2 Software Engineers, 1 UX Designer, 1 QA Engineer, 1 Project Manager',
     websiteImages: [
       '/images/projects/case-easygig-desktop-landing.png',
       '/images/projects/case-easygig-desktop-services.png',
@@ -57,7 +57,7 @@ export const projects = [
     description:
       'Internal operations tool designed to maximize team productivity through visual project mapping and resource allocation.',
     metrics: ['Internal Ops Digitized', 'Team Efficiency Tool', 'PO-Led Delivery'],
-    role: 'Senior Technical Project Manager',
+    role: 'Product Owner',
     duration: '1 Year (Initiation to Launch)',
     client: '6sense',
     teamSize: '(2 Frontend, 2 Backend, 2 QA, 2 UX Designer, 2 Project Coordinator, 1 Product Owner)',
@@ -101,7 +101,7 @@ export const projects = [
     description:
       'Maintained and optimized the flagship digital presence for a leading technical services firm.',
     metrics: ['Brand Presence Built', 'SEO Optimized', 'Zero-Dev Handover'],
-    role: 'Project Manager & Product Owner',
+    role: 'Product Owner',
     duration: '11 Months',
     client: '6sense',
     teamSize: '(1 Remote BA, 1 Backend, 1 Frontend, 1 QA, 1 UI/UX Designer, 1 SEO, 1 Product Owner)',
@@ -134,5 +134,45 @@ export const projects = [
                 - **Sales Enablement**: Armed the sales team with a shareable portfolio of case studies and service pages, reducing pitch preparation time by 50%.
                 - **Zero-Dev Handover**: Delivered a fully CMS-managed site, enabling the marketing team to publish content independently without developer involvement.
                 - **Page Performance**: Achieved 90+ Lighthouse scores across Performance, Accessibility, and SEO on all core pages.`
+  },
+  {
+    id: 'case-jeter-ai',
+    name: 'Jeter AI',
+    icon: '💘',
+    logo: '',
+    gradient: 'linear-gradient(135deg, #e040fb 0%, #7c4dff 100%)',
+    description:
+      'AI-powered matchmaking platform that digitizes in-person speed dating events with compatibility testing and intelligent video chat.',
+    metrics: ['AI Matchmaking Engine', 'Live Video Dating', 'Full Lifecycle Delivery'],
+    role: 'Project Coordinator',
+    duration: '6 Months',
+    client: 'US-based Startup',
+    teamSize: '(1 Frontend, 1 Backend, 1 QA, 1 UI/UX Designer, 1 Project Coordinator)',
+    websiteImages: [],
+    mobileImages: [],
+    deliverables: [
+      'AI compatibility scoring engine',
+      'Event organizer dashboard with scheduling and attendee management',
+      'Real-time 1-on-1 video chat module (WebRTC)',
+      'Compatibility test builder with shareable link system',
+      'AI-driven conversation prompts and question suggestions during video chat',
+      'User registration and event discovery portal',
+      'Post-event match results and analytics dashboard'
+    ],
+    challenge: `In the US, speed dating events are a popular way to meet potential partners — event planners organize in-person "5-minute dating" sessions where 20–30 participants rotate through rapid 1-on-1 conversations to find a match.
+                However, these events are geographically limited, capacity-constrained, and offer no data-driven insights into compatibility. Participants rely entirely on gut instinct during a brief 5-minute window with no preparation or follow-up analytics.
+                Jeter AI set out to digitize and supercharge this entire experience — bringing speed dating online with AI-powered compatibility analysis, intelligent conversation assistance, and scalable event management for organizers across the US.`,
+    strategy: `I coordinated the end-to-end delivery across a lean 5-person team, driving the product from concept to launch:
+                1. **Requirements Discovery & Event Flow Mapping**: Worked closely with the founder to map the real-world speed dating flow into a digital product — defining user journeys for event planners (create, schedule, manage events) and participants (register, take compatibility test, join video sessions).
+                2. **Compatibility Engine Coordination**: Facilitated the design of the AI compatibility test system. Users take a structured assessment and share a unique link with potential matches. The AI engine cross-analyzes both users' responses to generate a compatibility score and identify shared traits, values, and interests.
+                3. **AI-Assisted Video Chat Integration**: Coordinated the WebRTC-based 1-on-1 video chat module. During live sessions, the AI uses compatibility test results to surface real-time conversation prompts — suggesting questions, topics, and icebreakers tailored to the specific pairing.
+                4. **Sprint Management & QA Orchestration**: Ran structured two-week sprints with daily standups. Coordinated test cycles across the compatibility engine, video infrastructure, and event management flows to ensure a stable, bug-free launch.`,
+    results: `The platform launched successfully, bringing AI-powered speed dating to the US market:
+                - **Full Platform Delivered**: Shipped a complete matchmaking ecosystem — event creation, user registration, compatibility testing, and live AI-assisted video dating — within the 6-month timeline.
+                - **AI Compatibility Engine Live**: Deployed a working AI scoring system that analyzes paired test results and generates match compatibility percentages with trait breakdowns.
+                - **Real-Time AI Conversation Assist**: Launched in-session AI prompts that suggest context-aware questions and talking points during live video dates, reducing awkward silences and improving match quality.
+                - **Event Organizer Adoption**: Enabled event planners to create and manage virtual speed dating events with 20–30 participants per session, replicating the in-person format digitally.
+                - **Scalable Architecture**: Built on WebRTC with a microservices backend, supporting concurrent video sessions and real-time AI inference without performance degradation.
+                - **On-Time, On-Budget Delivery**: Completed all planned features across 12 sprints with zero scope overruns, maintaining 90%+ sprint completion velocity throughout.`
   }
 ];
