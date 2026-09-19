@@ -61,7 +61,13 @@ export const projects = [
     duration: '6 Months',
     client: 'US-based Startup',
     teamSize: '(1 Frontend, 1 Backend, 1 QA, 1 UI/UX Designer, 1 Project Coordinator)',
-    websiteImages: [],
+    websiteImages: [
+      '/images/projects/case-jeter-ai-desktop-home.png',
+      '/images/projects/case-jeter-ai-desktop-match-profile.png',
+      '/images/projects/case-jeter-ai-desktop-match-result.png',
+      '/images/projects/case-jeter-ai-desktop-speed-dating.png',
+      '/images/projects/case-jeter-ai-desktop-analytics.png'
+    ],
     mobileImages: [],
     deliverables: [
       'AI compatibility scoring engine',
