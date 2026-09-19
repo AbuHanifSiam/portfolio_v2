@@ -7,7 +7,7 @@ const TIMELINE_PHASES = ['Discovery', 'Planning', 'Execution', 'Launch'];
 const STAT_CARDS = [
   { id: 'stat-projects', value: '4', label: 'Projects', position: 'topRight' },
   { id: 'stat-delivery', value: '98%', label: 'On-Time Delivery', position: 'midRight' },
-  { id: 'stat-budget', value: '$200k+', label: 'Budget Managed', position: 'bottomRight' },
+  { id: 'stat-budget', value: '$300k+', label: 'Budget Managed', position: 'bottomRight' },
 ];
 
 export default function Hero() {
