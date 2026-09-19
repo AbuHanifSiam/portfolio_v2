@@ -52,6 +52,20 @@ function renderFormattedText(text) {
     );
   });
 }
+
+/**
+ * Reduces a URL to a bare hostname for display: drops the protocol, a leading
+ * "www.", and any path (e.g. "https://ops4.6sensehq.com/sign-in" ->
+ * "ops4.6sensehq.com").
+ */
+function toDisplayDomain(url) {
+  if (!url) return '';
+  return url
+    .replace(/^https?:\/\//, '')
+    .replace(/^www\./, '')
+    .split('/')[0];
+}
+
 export default function CaseStudyDetail({ params }) {
   const resolvedParams = use(params);
   const project = projects.find((p) => p.id === resolvedParams.id);
@@ -80,7 +94,7 @@ export default function CaseStudyDetail({ params }) {
   }
 
   return (
-    <div className={styles.page}>
+    <div className={styles.page} style={{ '--project-gradient': project.gradient }}>
       {/* Background layers */}
       <div className={styles.bgGradient} aria-hidden="true" />
       <div className={styles.bgGrid} aria-hidden="true" />
@@ -111,32 +125,83 @@ export default function CaseStudyDetail({ params }) {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <header className={styles.hero} style={{ '--project-gradient': project.gradient }}>
+      {/* Compact Header */}
+      <header className={styles.hero}>
         <div className={styles.heroContainer}>
-          <div className={styles.iconWrapper}>
-            {project.logo ? (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                src={project.logo}
-                alt={`${project.name} Logo`}
-                className={styles.heroLogo}
-              />
-            ) : (
-              <span className={styles.heroIcon}>{project.icon}</span>
-            )}
-          </div>
-          <h1 className={styles.title}>{project.name}</h1>
-          <p className={styles.desc}>{project.description}</p>
+          <div className={styles.heroMain}>
+            <div className={styles.heroTitleRow}>
+              <div className={styles.iconWrapper}>
+                {project.logo ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    src={project.logo}
+                    alt={`${project.name} Logo`}
+                    className={styles.heroLogo}
+                  />
+                ) : (
+                  <span className={styles.heroIcon}>{project.icon}</span>
+                )}
+              </div>
+              <h1 className={styles.title}>{project.name}</h1>
+            </div>
 
-          {/* Quick Metrics */}
-          <div className={styles.metricsRow}>
-            {project.metrics.map((metric) => (
-              <span key={metric} className={styles.metricBadge}>
-                {metric}
-              </span>
-            ))}
+            <p className={styles.desc}>{project.description}</p>
+
+            {/* Metrics as an inline credential rail rather than stacked badges */}
+            <div className={styles.metricsRail}>
+              {project.metrics.map((metric, idx) => (
+                <span key={metric} className={styles.railEntry}>
+                  {idx > 0 && (
+                    <span className={styles.railDivider} aria-hidden="true">
+                      /
+                    </span>
+                  )}
+                  {metric}
+                </span>
+              ))}
+            </div>
           </div>
+
+          {project.liveUrl && (
+            <div className={styles.liveCtaWrap}>
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.liveBtn}
+              >
+                <span className={styles.liveDot} aria-hidden="true" />
+                <span className={styles.liveBtnLabel}>Visit Live Project</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.liveBtnIcon}
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14 4h6m0 0v6m0-6L10 14"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M19 14.5V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3.5"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+              <span className={styles.liveHint}>
+                Opens {toDisplayDomain(project.liveUrl)} in a new tab
+              </span>
+            </div>
+          )}
         </div>
       </header>
 
@@ -247,7 +312,11 @@ export default function CaseStudyDetail({ params }) {
                           <div className={styles.browserDotRed}></div>
                           <div className={styles.browserDotYellow}></div>
                           <div className={styles.browserDotGreen}></div>
-                          <div className={styles.browserAddress}>https://{project.id}.live/page-{idx + 1}</div>
+                          <div className={styles.browserAddress}>
+                            {project.liveUrl
+                              ? toDisplayDomain(project.liveUrl)
+                              : `${project.id}.live/page-${idx + 1}`}
+                          </div>
                         </div>
                         <div className={styles.desktopScreen}>
                           <img

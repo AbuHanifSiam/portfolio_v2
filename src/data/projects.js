@@ -5,6 +5,8 @@ export const projects = [
     icon: '🛒',
     logo: '/images/projects/logo-easygig.png',
     gradient: 'linear-gradient(135deg, #3389f2 0%, #7b61ff 100%)',
+    // Public/live URL for this project. Leave empty ('') to hide the "View Live Project" button.
+    liveUrl: 'https://easygigjunk.com/',
     description:
       'Comprehensive gig management ecosystem streamlining freelancer and client interactions through automated workflows.',
     metrics: ['Rescued Stalled Product', '3 Apps Shipped', 'Agile from Scratch'],
@@ -54,6 +56,8 @@ export const projects = [
     icon: '💘',
     logo: '/images/projects/logo-jeter-ai.png',
     gradient: 'linear-gradient(135deg, #e040fb 0%, #7c4dff 100%)',
+    // Public/live URL for this project. Leave empty ('') to hide the "View Live Project" button.
+    liveUrl: 'https://jeter.ai/',
     description:
       'AI-powered matchmaking platform that digitizes in-person speed dating events with compatibility testing and intelligent video chat.',
     metrics: ['AI Matchmaking Engine', 'Live Video Dating', 'Full Lifecycle Delivery'],
@@ -100,6 +104,8 @@ export const projects = [
     icon: '📊',
     logo: '/images/projects/logo-ops4.png',
     gradient: 'linear-gradient(135deg, #ff5f29 0%, #ff8f6b 100%)',
+    // Public/live URL for this project. Leave empty ('') to hide the "View Live Project" button.
+    liveUrl: 'https://ops4.6sensehq.com/sign-in',
     description:
       'Internal operations tool designed to maximize team productivity through visual project mapping and resource allocation.',
     metrics: ['Internal Ops Digitized', 'Team Efficiency Tool', 'PO-Led Delivery'],
@@ -144,6 +150,8 @@ export const projects = [
     icon: '🏥',
     logo: '/images/projects/logo-6sense.png',
     gradient: 'linear-gradient(135deg, #00c9a7 0%, #3389f2 100%)',
+    // Public/live URL for this project. Leave empty ('') to hide the "View Live Project" button.
+    liveUrl: 'https://www.6sensehq.com/',
     description:
       'Maintained and optimized the flagship digital presence for a leading technical services firm.',
     metrics: ['Brand Presence Built', 'SEO Optimized', 'Zero-Dev Handover'],
